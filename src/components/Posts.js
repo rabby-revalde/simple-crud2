@@ -22,12 +22,9 @@ const Posts = () => {
   };
 
   const HandleClickDeletePost = async (userId, postId) => {
-    const res = await fetch(
-      `https://jsonplaceholder.typicode.com/posts/${postId}`,
-      {
-        method: "DELETE",
-      }
-    );
+    await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`, {
+      method: "DELETE",
+    });
     setNusers(
       nUser.map((user) => {
         if (user.id === userId) {
